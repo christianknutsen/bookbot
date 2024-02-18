@@ -5,8 +5,11 @@ def main():
     chars_dict = get_chars_dict(text)
     chars_sorted_list = chars_dict_to_sorted_list(chars_dict)
 
-    print(f"full text of file {book_path}")
-    print(text)
+    full_text = input("do you want the file printed in report? (y/n)")
+    if full_text == "y":
+        print(f"full text of file {book_path}")
+        print(text)
+    
     print()
     print()
     print()
