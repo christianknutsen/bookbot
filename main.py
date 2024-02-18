@@ -1,11 +1,11 @@
 def main():
     book_path = "books/frankenstein"
-    text = get_book_text(book_path)
+    text = book_text(book_path)
     num_words = word_num(text)
     chars_dict = get_chars_dict(text)
-    chars_sorted_list = chars_dict_to_sorted_list(chars_dict)
+    chars_sorted_list = sorted_list(chars_dict)
 
-    full_text = input("do you want the file printed in report? (y/n)")
+    full_text = input("do you want the file printed in report? (y/n)   ")
     if full_text == "y":
         print(f"full text of file {book_path}")
         print(text)
@@ -38,7 +38,7 @@ def sort_on(d):
     return d["num"]
 
 
-def chars_dict_to_sorted_list(num_chars_dict):
+def sorted_list(num_chars_dict):
     sorted_list = []
     for ch in num_chars_dict:
         sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
@@ -57,7 +57,7 @@ def get_chars_dict(text):
     return chars
 
 
-def get_book_text(path):
+def book_text(path):
     with open(path) as f:
         return f.read()
 
