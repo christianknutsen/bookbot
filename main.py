@@ -21,9 +21,10 @@ def main():
     if words == "y":
         print(f"There are {num_words} words found in the file")
     
-    print()
+
     if letters == "y":
-        print("letters found in order of most to least common:")
+        print()
+        print("Letters found in order of most to least common:")
         print()
         for item in chars_sorted_list:
             if not item["char"].isalpha():
