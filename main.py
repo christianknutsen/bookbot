@@ -6,6 +6,8 @@ def main():
     chars_sorted_list = sorted_list(chars_dict)
 
     full_text = input("do you want the file printed in report? (y/n)   ")
+    words = input("Do you want the number of words printed in the report? (y/n)   ")
+    letters = input("do you want the letter count found in the file in the report? (y/n)   ")
     if full_text == "y":
         print(f"full text of file {book_path}")
         print(text)
@@ -13,17 +15,20 @@ def main():
     print()
     print()
     print()
-    print(f" Report of words for file {book_path} ")
+    print(f"Report for file {book_path} ")
     print()
-    print(f"There are {num_words} words found in the file")
-    print()
-    print("letters found in order of most to least common:")
-    print()
+
+    if words == "y":
+        print(f"There are {num_words} words found in the file")
     
-    for item in chars_sorted_list:
-        if not item["char"].isalpha():
-            continue
-        print(f"The letter '{item['char']}' was found in the file {item['num']} times")
+    print()
+    if letters == "y":
+        print("letters found in order of most to least common:")
+        print()
+        for item in chars_sorted_list:
+            if not item["char"].isalpha():
+             continue
+            print(f"The letter '{item['char']}' was found in the file {item['num']} times")
 
     print()
     print("Report finished")
